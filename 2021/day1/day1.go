@@ -11,19 +11,6 @@ import (
 	"github.com/madsaune/advent-of-code/internal/utils"
 )
 
-func main() {
-
-	var input1 string
-	var input2 string
-
-	flag.StringVar(&input1, "input1", "input1.txt", "Path to input file for task 1")
-	flag.StringVar(&input2, "input2", "input2.txt", "Path to input file for task 2")
-	flag.Parse()
-
-	taskOne(utils.LoadFile(input1))
-	taskTwo(utils.LoadFile(input2))
-}
-
 type previousDepth struct {
 	value int
 	valid bool
@@ -86,4 +73,17 @@ func taskTwo(f *os.File) {
 	}
 
 	fmt.Printf("Task 2: How many measurements are larger than the previous measurement? ==> %d\n", count)
+}
+
+func main() {
+
+	var input1 string
+	var input2 string
+
+	flag.StringVar(&input1, "input1", "input1.txt", "Path to input file for task 1")
+	flag.StringVar(&input2, "input2", "input2.txt", "Path to input file for task 2")
+	flag.Parse()
+
+	taskOne(utils.LoadFile(input1))
+	taskTwo(utils.LoadFile(input2))
 }
